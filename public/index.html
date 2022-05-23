@@ -34,6 +34,9 @@
     if (msg.type === 'TRACKING') {
       Logger.logTracking(`${msg.type} ${msg[0]}`, (({ type, ...o }) => o)(msg));
     }
+    if (msg.type === 'DEBUG') {
+      Logger.logDebug(`${msg.type} ${msg[0]}`, (({ type, ...o }) => o)(msg));
+    }
     // var item = document.createElement('li');
     // item.textContent = msg.value;
     // messages.appendChild(item);

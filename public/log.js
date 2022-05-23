@@ -4,6 +4,7 @@ const selector = {
   warning: "#ff8f00",
   error: "#ff002b",
   tracking: "#2C5545",
+  debug: "#03034A",
 };
 
 const LogLevel = {
@@ -39,5 +40,8 @@ const Logger = {
   },
   logTracking: (tag, ...message) => {
     log(tag, "tracking", ...message);
+  },
+  logDebug: (tag, ...message) => {
+    log(tag, "debug", ...message);
   },
 };
