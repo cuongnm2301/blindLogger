@@ -8,12 +8,18 @@ const io = new Server(server);
 const { networkInterfaces } = require("os");
 const nets = networkInterfaces();
 let host = "localhost";
-for (const net of nets.en0) {
-  if (net.family === "IPv4" && !net.internal) {
-    host = net.address;
-    break;
+
+console.log(nets);
+
+if (nets.en0) {
+  for (const net of nets.en0) {
+    if (net.family === "IPv4" && !net.internal) {
+      host = net.address;
+      break;
+    }
   }
 }
+
 const PORT = 3000;
 
 io.on("connection", (socket) => {
